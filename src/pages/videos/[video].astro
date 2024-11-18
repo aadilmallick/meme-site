@@ -18,7 +18,7 @@ const videoUrl = `https://utfs.io/f/${video}`
 <Layout title={videoName} videoName={videoName} videoKey={video} videoUrl={videoUrl}>
     <h1 class="text-center text-2xl font-light my-2">{videoName}</h1>
     <div class="video-container">
-        <video controls>
+        <video controls playsinline src={videoUrl} muted>
             <source src={videoUrl} type="video/mp4" />
         </video> 
     </div>
@@ -33,6 +33,7 @@ const videoUrl = `https://utfs.io/f/${video}`
 
         video {
             max-height: 80vh;
+            height: auto;
             aspect-ratio: 16 / 9;
         }
     }
