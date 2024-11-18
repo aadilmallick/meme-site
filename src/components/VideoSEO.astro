@@ -7,7 +7,10 @@ interface Props {
 
 const {  videoName, videoUrl, videoKey } = Astro.props;
 const siteUrl = "https://aadilmemesite.netlify.app"
+const currentUrl = `${siteUrl}/videos/${videoKey}`
 ---
+
+<link rel="canonical" href={currentUrl} />
 
 <meta property="og:type" content="video.other">
 <meta property="og:image" content="https://as1.ftcdn.net/v2/jpg/05/72/45/54/1000_F_572455458_12TrmvulKAxgKOL1GU9UGpnj5GZQodxK.jpg">
@@ -15,9 +18,19 @@ const siteUrl = "https://aadilmemesite.netlify.app"
 <meta property="og:image:height" content="1000">
 <meta property="og:title" content={videoName}>
 <meta property="og:description" content={videoName}>
-<meta property="og:url" content={`${siteUrl}/videos/${videoKey}`}>
+<!-- <meta property="og:url" content={`${siteUrl}/videos/${videoKey}`}> -->
+<meta property="og:url" content={videoUrl}>
 <meta property="og:video" content={videoUrl}>
 <meta property="og:video:secure_url" content={videoUrl}>
 <meta property="og:video:type" content="video/mp4">
 <meta property="og:video:width" content="1280">
 <meta property="og:video:height" content="720">
+
+<meta name="twitter:card" content="player" />
+<meta name="twitter:title" content="Hemopure ~ Wakey Wakey #26" />
+<meta name="twitter:description" content="Hemopure is an artificial blood (HBOC) that’s saving lives in South Africa. It’s shelf stable and 100% compatible with all blood types." />
+<meta name="twitter:image" content="https://as1.ftcdn.net/v2/jpg/05/72/45/54/1000_F_572455458_12TrmvulKAxgKOL1GU9UGpnj5GZQodxK.jpg" />
+<meta name="twitter:player:width" content="1280" />
+<meta name="twitter:player:height" content="720" />
+<meta name="twitter:player:stream" content={videoUrl} />
+<meta name="twitter:player:stream:content_type" content="video/mp4" />
