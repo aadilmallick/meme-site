@@ -1,0 +1,19 @@
+---
+interface Props {
+	videoName: string;
+	videoUrl: string;
+    videoKey: string;
+}
+
+const {  videoName, videoUrl, videoKey } = Astro.props;
+---
+
+<meta property="og:type" content="video.other">
+<meta property="og:title" content="Your Video Title">
+<meta property="og:description" content={videoName}>
+<meta property="og:url" content={`/videos/${videoKey}`}>
+<meta property="og:video" content={videoUrl}>
+<meta property="og:video:secure_url" content={videoUrl}>
+<meta property="og:video:type" content="video/mp4">
+<meta property="og:video:width" content="1280">
+<meta property="og:video:height" content="720">
