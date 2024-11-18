@@ -6,7 +6,7 @@ import videos from "../data/videos.json"
 <Layout title="My Meme Videos">
 	<main>
 		{videos.map((video) => (
-			<a href={`/videos/${video.key}?name=${video.name}`} class="video-card">
+			<a href={`/videos/${video.key}`} class="video-card">
 				<article>
 					<h3>{video.name}</h3>
 	

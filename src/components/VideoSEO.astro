@@ -6,12 +6,16 @@ interface Props {
 }
 
 const {  videoName, videoUrl, videoKey } = Astro.props;
+const siteUrl = "https://aadilmemesite.netlify.app"
 ---
 
 <meta property="og:type" content="video.other">
-<meta property="og:title" content="Your Video Title">
+<meta property="og:image" content="https://as1.ftcdn.net/v2/jpg/05/72/45/54/1000_F_572455458_12TrmvulKAxgKOL1GU9UGpnj5GZQodxK.jpg">
+<meta property="og:image:width" content="1000">
+<meta property="og:image:height" content="1000">
+<meta property="og:title" content={videoName}>
 <meta property="og:description" content={videoName}>
-<meta property="og:url" content={`/videos/${videoKey}`}>
+<meta property="og:url" content={`${siteUrl}/videos/${videoKey}`}>
 <meta property="og:video" content={videoUrl}>
 <meta property="og:video:secure_url" content={videoUrl}>
 <meta property="og:video:type" content="video/mp4">
